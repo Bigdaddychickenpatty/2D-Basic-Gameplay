@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5;
-
     public float xRange = 8;
+    public GameObject projectilePrefab;
 
     private float _horizontalInput;
 
@@ -18,6 +18,16 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+      PlayerMovement();
+
+      if(Input.GetKeyDown(KeyCode.Space))
+      {
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+      }
+    }
+
+    void PlayerMovement()
     {
         _horizontalInput = Input.GetAxis("Horizontal");
 
