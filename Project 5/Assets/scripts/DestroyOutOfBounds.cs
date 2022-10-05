@@ -14,5 +14,10 @@ public float lowerBound;
         {
             Destroy(this.gameObject);
         }
+
+        if(transform.position.y < lowerBound)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
